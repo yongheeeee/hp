@@ -54,4 +54,67 @@
     </div>
 
     <div class="item" onclick="openModal('project2')">
-        <img src="
+        <img src="https://picsum.photos/600/400?random=22" alt="Forest">
+        <div class="item-info">
+            <div class="item-title">Interdisciplinary Project</div>
+            <div>Forest (2025)</div>
+        </div>
+    </div>
+</main>
+
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="mImg" class="modal-img" src="" alt="">
+        <div class="modal-header">
+            <h2 id="mTitle" class="modal-title"></h2>
+            <div id="mYear" class="modal-year"></div>
+        </div>
+        <p id="mDesc" class="modal-desc"></p>
+    </div>
+</div>
+
+<script>
+    이것이 1번인가?
+    // 프로
+젝트 데이터 저장 (나중에 이 부분만 수정하시면 됩니다)
+    const data = {
+        project1: {
+            title: "Deep Time: Chapter 1",
+            year: "2026.04 - 2026.12",
+            desc: "성용희 큐레이터 기획의 '명탐정의 시간'.\nPDF에서 확인된 것처럼 시간의 깊이와 수행성을 탐구하는 다원예술 프로그램입니다. 국립현대미술관 서울에서 진행됩니다.",
+            img: "https://picsum.photos/600/800?random=11"
+        },
+        project2: {
+            title: "Forest",
+            year: "2025",
+            desc: "2025년에 진행된 다원예술 프로젝트 '숲'.\n자연과 예술의 경계를 허무는 실험적인 퍼포먼스를 선보였습니다.",
+            img: "https://picsum.photos/600/400?random=22"
+        }
+    };
+
+    function openModal(id) {
+        const item = data[id];
+        document.getElementById('mTitle').innerText = item.title;
+        document.getElementById('mYear').innerText = item.year;
+        document.getElementById('mDesc').innerText = item.desc;
+        document.getElementById('mImg').src = item.img;
+        document.getElementById('projectModal').style.display = "block";
+        document.body.style.overflow = "hidden"; // 배경 스크롤 방지
+    }
+
+    function closeModal() {
+        document.getElementById('projectModal').style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+
+    // 배경 클릭 시 모달 닫기
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('projectModal')) closeModal();
+    }
+</script>
+이 프로젝트는 블라블라블라
+
+    
+</body>
+</html>
